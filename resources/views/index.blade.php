@@ -13,6 +13,14 @@
 <body>
 
     <div class="container">
+        {{-- alert message --}}
+        @if (session('success'))
+            <div class="alert alert-primary" role="alert">
+                {{session('success')}}
+            </div>
+        @endif
+
+
         <div class="row">
             <div class="col-6">
 
@@ -28,16 +36,15 @@
 
                 <!-- Modal -->
             </div>
-
-
             {{-- endmodal --}}
 
-            <table>
+            <table class="table table-hover">
                 <tr>
                     <th>First Name</th>
                     <th>Second Name</th>
                     <th>Gender</th>
                     <th>Address</th>
+                    <th>Operation</th>
                 </tr>
                 @foreach ($data_student as $student)
                     <tr>
@@ -45,6 +52,8 @@
                         <td>{{ $student->SecondName }}</td>
                         <td>{{ $student->Gender }}</td>
                         <td>{{ $student->Address }}</td>
+                        <td><a href="studentdata/{{ $student->id }}/edit">Edit</a></td>
+                        <td><a href="studentdata/{{ $student->id }}/delete" onclick= "return confirm('Are You Sure')">Delete</a></td>
                     </tr>
                 @endforeach
             </table>
@@ -92,17 +101,17 @@
 
 
 
-                {{-- End form --}}
-                <div class="modal-footer">
-                    {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    {{-- End form --}}
+                    <div class="modal-footer">
+                        {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button> --}}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>

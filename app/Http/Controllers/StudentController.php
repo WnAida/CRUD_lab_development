@@ -24,6 +24,28 @@ class StudentController extends Controller
         return redirect('/studentdata')->with('success', 'New Data Insert');
     }
 
+    public function edit($id)
+    {
+        $data_student = \App\Models\student::find($id);
+        return view('edit',['data_student'=>$data_student]);
+    }
+
+    public function update(Request $request,$id)
+    {
+        $data_student = \App\Models\student::find($id);
+        $data_student -> update($request->all());
+        return redirect('/studentdata')->with('success', 'Data Successfully Updated');
+
+    }
+
+    public function delete($id)
+    {
+        $data_student = \App\Models\student::find($id);
+        $data_student -> delete($data_student);
+        return redirect('/studentdata')->with('success', 'Data Successfully Deleted');
+
+    }
+
 
 
 
