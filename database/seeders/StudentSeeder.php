@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Faker\Factory as Faker; // Corrected the import
+use Faker\Factory as Faker;
 
 class StudentSeeder extends Seeder
 {
@@ -13,14 +13,15 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create(); // Corrected the Faker instantiation
+        $faker = Faker::create();
 
         foreach (range(1, 5) as $value) {
             DB::table('students')->insert([
-                'FirstName' => $faker->firstName,
-                'SecondName' => $faker->lastName,
-                'Gender' => $faker->randomElement(['M', 'F']),
-                'Address' => $faker->country,
+                'name' => $faker->name,
+                'department' => $faker->word, // Use a valid Faker method for department
+                'email' => $faker->email,
+                // 'gender' => $faker->randomElement(['M', 'F']), // Uncomment and use a valid column name
+                'phone_number' => $faker->phoneNumber, // Use a valid Faker method for phone number
             ]);
         }
     }

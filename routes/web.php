@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/studentdata', 'App\Http\Controllers\StudentController@index');
-Route::post('/studentdata/create', 'App\Http\Controllers\StudentController@create');
-Route::get('/studentdata/{id}/edit', 'App\Http\Controllers\StudentController@edit');
-Route::post('/studentdata/{id}/update', 'App\Http\Controllers\StudentController@update');
-Route::get('/studentdata/{id}/delete', 'App\Http\Controllers\StudentController@delete');
+Route::get('/doctordata', 'App\Http\Controllers\doctorController@index');
+Route::post('/doctordata/create', 'App\Http\Controllers\doctorController@create');
+Route::get('/doctordata/{id}/edit', 'App\Http\Controllers\doctorController@edit');
+Route::post('/doctordata/{id}/update', 'App\Http\Controllers\doctorController@update');
+Route::get('/doctordata/{id}/delete', 'App\Http\Controllers\doctorController@delete');

@@ -42,7 +42,7 @@
                 <div class="col-lg-6">
                     <div class="modal-body">
                         {{-- Form --}}
-                        <form action="/studentdata/{{$data_student->id}}/update" method="POST">
+                        <form action="/doctordata/{{$data_student->id}}/update" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="FirstName" class="form-label">First Name</label>
