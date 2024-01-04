@@ -42,31 +42,30 @@
                 <div class="col-lg-6">
                     <div class="modal-body">
                         {{-- Form --}}
-                        <form action="/doctordata/{{$data_student->id}}/update" method="POST">
+                        <form action="/doctordata/{{$doctor_data->id}}/update" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="FirstName" class="form-label">First Name</label>
-                                <input name="FirstName" class="form-control" id="FirstName" placeholder="Wan Aida" value="{{$data_student->FirstName}}">
+                                <label for="Name" class="form-label">Name</label>
+                                <input name="Name" class="form-control" id="Name" placeholder="Wan Aida" value="{{$doctor_data->name}}">
                             </div>
 
 
                             <div class="mb-3">
-                                <label for="SecondName" class="form-label">Second Name</label>
-                                <input name="SecondName" class="form-control" id="SecondName"
-                                    placeholder="Wan Mohd Zaini" value="{{$data_student->SecondName}}">
+                                <label for="Department" class="form-label">Department</label>
+                                <input name="Department" class="form-control" id="Department"
+                                    placeholder="Wan Mohd Zaini" value="{{$doctor_data->department}}">
                             </div>
 
                             <div class="mb-3">
-                                <select name="Gender" class="form-select" aria-label="Default select example">
-                                    <option selected>Choose Gender</option>
-                                    <option value="M" @if ($data_student->Gender=='M') selected @endif>M</option>
-                                    <option value="F" @if ($data_student->Gender=='F') selected @endif>F</option>
-                                </select>
+                                <label for="email" class="form-label">Email</label>
+                                <input name="email" class="form-control" id="email"
+                                    placeholder="user@gmail.com" value="{{$doctor_data->email}}">
                             </div>
 
                             <div class="mb-3">
-                                <label for="Address" class="form-label">Address</label>
-                                <textarea class="form-control" name="Address" id="Address" rows="2">{{$data_student->Address}}</textarea>
+                                <label for="phone_number" class="form-label">Phone Number</label>
+                                <input name="phone_number" class="form-control" id="phone_number"
+                                    placeholder="0179856166" value="{{$doctor_data->phone_number}}">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Save changes</button>
