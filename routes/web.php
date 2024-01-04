@@ -22,6 +22,8 @@ Route::get('/homepage', function () {
 });
 
 
+Route::get('/appointment', 'App\Http\Controllers\appointmentController@index');
+Route::post('/appointment/create', 'App\Http\Controllers\appointmentController@create');
 
 Route::get('/doctordata', 'App\Http\Controllers\doctorController@index');
 Route::post('/doctordata/create', 'App\Http\Controllers\doctorController@create');
