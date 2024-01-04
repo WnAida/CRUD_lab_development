@@ -53,16 +53,15 @@
                 <th>Operation</th>
             </tr>
             @foreach ($doctor_data as $doctor)
-                <tr>
-                    <td>{{ $doctor->name }}</td>
-                    <td>{{ $doctor->department }}</td>
-                    <td>{{ $doctor->email }}</td>
-                    <td>{{ $doctor->phone_number }}</td>
-                    <td><a href="doctordata/{{ $doctor->id }}/edit">Edit</a></td>
-                    <td><a href="doctordata/{{ $doctor->id }}/delete"
-                            onclick= "return confirm('Are You Sure')">Delete</a></td>
-                </tr>
-            @endforeach
+            <tr>
+                <td>{{ $doctor->name }}</td>
+                <td>{{ $doctor->department }}</td>
+                <td>{{ $doctor->email }}</td>
+                <td>{{ $doctor->phone_number }}</td>
+                <td><a href="doctordata/{{ $doctor->id }}/edit">Edit</a></td>
+                <td><a href="doctordata/{{ $doctor->id }}/delete" onclick="return confirm('Are You Sure')">Delete</a></td>
+            </tr>
+        @endforeach
         </table>
 
     </div>

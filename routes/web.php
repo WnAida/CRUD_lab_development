@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/homepage', function () {
+    return view('homepage');
+});
+
+
+
 Route::get('/doctordata', 'App\Http\Controllers\doctorController@index');
 Route::post('/doctordata/create', 'App\Http\Controllers\doctorController@create');
 Route::get('/doctordata/{id}/edit', 'App\Http\Controllers\doctorController@edit');

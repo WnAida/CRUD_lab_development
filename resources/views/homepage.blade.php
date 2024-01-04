@@ -38,7 +38,8 @@
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Appointment</a></li>
         <li><a href="#">Services</a></li>
-        <li><a href="#">Staff</a></li>
+        <li><a href="{{ route('doctordata') }}">Staff</a></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

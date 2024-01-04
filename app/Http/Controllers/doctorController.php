@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\doctor;
 use Illuminate\Http\Request;
+// use App\Models\doctor;
+
 
 class doctorController extends Controller
 {
     public function index()
     {
-        $doctor_data = \App\Models\Doctor::all(); // Assuming your model is named Doctor
-        // dd($doctor_data); // Comment out or remove this line
+        $doctor_data = doctor::all(); // Use the correct naming convention
         return view('index', ['doctor_data' => $doctor_data]);
     }
 
