@@ -74,6 +74,7 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Insert doctor Information</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            
             <div class="modal-body">
                 {{-- Form --}}
                 <form action="/doctordata/create" method="POST">

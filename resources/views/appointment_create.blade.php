@@ -7,48 +7,50 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Booking Appointment</title>
     <style>
-
+        .form-size {
+            width: 50%; /* Adjust the width as needed */
+            margin: auto; /* This centers the form horizontally */
+            margin-top: 20px; /* Adjust top margin as needed */
+            margin-bottom: 20px; /* Adjust bottom margin as needed */
+            padding: 20px; /* Add padding for better visual appearance */
+        }
     </style>
 </head>
 <body>
-<section>
-    <div>
-        <form action="/doctordata/create" method="POST">
-            @csrf
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input name="name" class="form-control" id="name" placeholder="Wan Aida">
-            </div>
+    <section>
+        <div class="form-size">
+            <form action="{{ route('appointment.store') }}" method="POST">
+             @csrf
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input name="name" class="form-control" id="name" placeholder="Wan Aida">
+                </div>
 
+                <div class="mb-3">
+                    <label for="faculty" class="form-label">Faculty</label>
+                    <input name="faculty" class="form-control" id="faculty">
+                </div>
 
-            <div class="mb-3">
-                <label for="department" class="form-label">Department</label>
-                <input name="department" class="form-control" id="department" placeholder="Wan Mohd Zaini">
-            </div>
-            {{--
-            <div class="mb-3">
-                <select name="Gender" class="form-select" aria-label="Default select example">
-                    <option selected>Choose Gender</option>
-                    <option value="M">M</option>
-                    <option value="F">F</option>
-                </select>
-            </div> --}}
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <textarea class="form-control" name="date" id="date" rows="2"></textarea>
+                </div>
 
-            <div class="mb-3">
-                <label for="phone_number" class="form-label">email</label>
-                <textarea class="form-control" name="email" id="email" rows="2"></textarea>
-            </div>
+                <div class="mb-3">
+                    <label for="phone_number" class="form-label">Phone Number</label>
+                    <input class="form-control" type="text" name="phone_number" id="phone_number">
+                </div>
 
-            <div class="mb-3">
-                <label for="phone_number" class="form-label">phone number</label>
-                <textarea class="form-control" name="phone_number" id="phone_number" rows="2"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save changes</button>
-        </form>
-
-
-    </div>
-</section>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+                <div class="mb-3">
+                    <label for="reason" class="form-label">Reason</label>
+                    <textarea class="form-control" name="reason" id="reason" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <a href="{{ url('/appointment_index') }}" style="color: white; text-decoration: none;">Book Appointment</a>
+                </button>
+            </form>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

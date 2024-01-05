@@ -9,11 +9,18 @@ class appointmentController extends Controller
 {
     public function index()
     {
-        $appointment_data = appointment::all(); // Use the correct naming convention
+        $appointment_data = appointment::all();
+        // dd($appointment_data);// Use the correct naming convention
         return view('appointment_index', ['appointment_data' => $appointment_data]);
     }
+    public function create()
+    {
+        return view('appointment_create');
+    }
 
-    public function create(Request $request)
+
+
+    public function store(Request $request)
     {
         \App\Models\appointment::create([
             'name' => $request->input('name'),
@@ -23,8 +30,9 @@ class appointmentController extends Controller
             'reason' => $request->input('reason'),
         ]);
 
-        return redirect('/appointmentdata')->with('success', 'New Data Insert');
+        return redirect()->route('appointment.index')->with('success', 'New Data Inserted');
     }
+
 
     public function edit($id)
     {

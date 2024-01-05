@@ -22,10 +22,10 @@ body {
 <body>
   <section>
     <div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Book Appointment
-        </button>
+        <a href="{{ route('appointment.createForm') }}" class="btn btn-primary">Book Appointment</a>
+
     </div>
+
     <div class="table-container">
         <table class="table mx-auto mx-3">
             <thead>
@@ -41,16 +41,17 @@ body {
             </thead>
             <tbody>
                 @foreach ($appointment_data as $appointment)
-              <tr>
-                <th scope="row">1</th>
-                {{-- <td>{{ $appointment->id }}</td> --}}
-                <td>{{ $appointment->name }}</td>
-                <td>{{ $appointment->faculty }}</td>
-                <td>{{ $appointment->date }}</td>
-                <td>{{ $appointment->phone_number }}</td>
-                <td>{{ $appointment->reason }}</td>
-              </tr>
-              @endforeach
+                <tr>
+                    <td>{{ $appointment->name }}</td>
+                    <td>{{ $appointment->faculty }}</td>
+                    <td>{{ $appointment->date }}</td>
+                    <td>{{ $appointment->phone_number }}</td>
+                    <td>{{ $appointment->reason }}</td>
+                    <td>
+                        <!-- Add action buttons if needed -->
+                    </td>
+                </tr>
+            @endforeach
             </tbody>
           </table>
     </div>

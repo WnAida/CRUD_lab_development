@@ -22,8 +22,16 @@ Route::get('/homepage', function () {
 });
 
 
+
+
 Route::get('/appointment', 'App\Http\Controllers\appointmentController@index');
-Route::post('/appointment/create', 'App\Http\Controllers\appointmentController@create');
+Route::get('/appointment/create', 'App\Http\Controllers\appointmentController@create')->name('appointment.createForm');
+Route::post('/appointment/create', 'App\Http\Controllers\appointmentController@store')->name('appointment.store');
+Route::get('/appointment/index', 'App\Http\Controllers\AppointmentController@index')->name('appointment.index');
+
+
+
+
 
 Route::get('/doctordata', 'App\Http\Controllers\doctorController@index');
 Route::post('/doctordata/create', 'App\Http\Controllers\doctorController@create');
