@@ -22,6 +22,10 @@ Route::get('/homepage', function () {
     return view('homepage');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 
 Auth::routes();
 
@@ -33,7 +37,7 @@ Route::post('/appointment/store', 'App\Http\Controllers\appointmentController@st
 Route::get('/appointment/index', 'App\Http\Controllers\appointmentController@index')->name('appointment.index');
 Route::get('/appointment/{id}/edit', 'App\Http\Controllers\appointmentController@editappointment')->name('appointment.edit');
 Route::post('/appointment/{id}/update', 'App\Http\Controllers\appointmentController@update')->name('appointment.update');
-Route::get('/appointment/{id}/delete', 'App\Http\Controllers\appointmentController@delete')->name('appointment.update');
+Route::get('/appointment/{id}/delete', 'App\Http\Controllers\appointmentController@delete')->name('appointment.delete');
 
 
 

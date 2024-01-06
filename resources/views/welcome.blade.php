@@ -14,7 +14,7 @@
     <!-- Styles -->
     <style>
         body {
-            background: url('assets/doctor.jpg') no-repeat center center fixed;
+            background: url('assets/imagebackground.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
         }
@@ -22,9 +22,9 @@
         .container-homepage {
             background-color: #DDDDDD;
             margin: 140px;
-            padding: 40px;
+            padding: 80px;
             max-width: 550px;
-            border-radius: 15px;
+            border-radius: 40px;
             /* Adjust the curve by changing the value */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             /* Add a subtle shadow */
