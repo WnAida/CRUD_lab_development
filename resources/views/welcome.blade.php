@@ -14,7 +14,7 @@
     <!-- Styles -->
     <style>
         body {
-            background: url('assets/imagebackground.jpg') no-repeat center center fixed;
+            background: url('assets/doctorwelcomepage.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
         }

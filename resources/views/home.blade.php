@@ -117,8 +117,17 @@
                     <li><a href="#">Services</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <li>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <span class="glyphicon glyphicon-log-out"></span> Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
                 </ul>
+
             </div>
         </div>
     </nav>
@@ -135,7 +144,6 @@
                                     {{ session('status') }}
                                 </div>
                             @endif
-
                             {{ __('You are logged in!') }}
                         </div>
                     </div>

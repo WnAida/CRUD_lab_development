@@ -12,7 +12,6 @@
         body {
             background: url('assets/clinichomepage.jpg') no-repeat center center fixed;
             background-size: cover;
-            padding-top: 60px;
         }
 
         .row .col-6 .custom-heading {
@@ -24,6 +23,30 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ClinicCare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ url('/home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/appointment/create') }}">Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/doctordata') }}">Doctors</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
 
     <div class="container">
         {{-- alert message --}}
@@ -96,31 +119,19 @@
                             <label for="name" class="form-label">Name</label>
                             <input name="name" class="form-control" id="name" placeholder="Wan Aida">
                         </div>
-
-
                         <div class="mb-3">
                             <label for="department" class="form-label">Department</label>
-                            <input name="department" class="form-control" id="department" placeholder="Wan Mohd Zaini">
+                            <input name="department" class="form-control" id="department" placeholder=" General Health">
                         </div>
-                        {{--
-                    <div class="mb-3">
-                        <select name="Gender" class="form-select" aria-label="Default select example">
-                            <option selected>Choose Gender</option>
-                            <option value="M">M</option>
-                            <option value="F">F</option>
-                        </select>
-                    </div> --}}
-
                         <div class="mb-3">
-                            <label for="phone_number" class="form-label">email</label>
-                            <textarea class="form-control" name="email" id="email" rows="2"></textarea>
+                            <label for="email" class="form-label">Email</label>
+                            <input name="email" class="form-control" id="email" placeholder="user@gmail.com">
                         </div>
-
                         <div class="mb-3">
-                            <label for="phone_number" class="form-label">phone number</label>
-                            <textarea class="form-control" name="phone_number" id="phone_number" rows="2"></textarea>
+                            <label for="phone_number" class="form-label">Phone Number</label>
+                            <input name="phone_number" class="form-control" id="phone_number" placeholder="017 9806166">
                         </div>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Add Information</button>
                     </form>
 
 
