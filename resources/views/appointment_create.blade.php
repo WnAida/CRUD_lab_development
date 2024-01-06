@@ -33,7 +33,7 @@
 
                 <div class="mb-3">
                     <label for="date" class="form-label">Date</label>
-                    <textarea class="form-control" name="date" id="date" rows="2"></textarea>
+                    <input type="date" name="date" class="form-control" id="date">
                 </div>
 
                 <div class="mb-3">
@@ -45,9 +45,7 @@
                     <label for="reason" class="form-label">Reason</label>
                     <textarea class="form-control" name="reason" id="reason" rows="2"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">
-                    <a href="{{ url('/appointment_index') }}" style="color: white; text-decoration: none;">Book Appointment</a>
-                </button>
+                <button type="submit" class="btn btn-primary">Book Appointment</button>
             </form>
         </div>
     </section>

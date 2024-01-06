@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,13 +23,17 @@ Route::get('/homepage', function () {
 });
 
 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/appointment', 'App\Http\Controllers\appointmentController@index');
 Route::get('/appointment/create', 'App\Http\Controllers\appointmentController@create')->name('appointment.createForm');
-Route::post('/appointment/create', 'App\Http\Controllers\appointmentController@store')->name('appointment.store');
-Route::get('/appointment/index', 'App\Http\Controllers\AppointmentController@index')->name('appointment.index');
-
+Route::post('/appointment/store', 'App\Http\Controllers\appointmentController@store')->name('appointment.store');
+Route::get('/appointment/index', 'App\Http\Controllers\appointmentController@index')->name('appointment.index');
+Route::get('/appointment/{id}/edit', 'App\Http\Controllers\appointmentController@editappointment')->name('appointment.edit');
+Route::post('/appointment/{id}/update', 'App\Http\Controllers\appointmentController@update')->name('appointment.update');
+Route::get('/appointment/{id}/delete', 'App\Http\Controllers\appointmentController@delete')->name('appointment.update');
 
 
 

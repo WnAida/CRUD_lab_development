@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('faculty');
             $table->string('phone_number');
-            $table->dateTime('date');
+            $table->date('date');
             $table->text('reason');
             $table->timestamps();
         });

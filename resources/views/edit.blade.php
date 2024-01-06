@@ -45,14 +45,14 @@
                         <form action="/doctordata/{{$doctor_data->id}}/update" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="Name" class="form-label">Name</label>
-                                <input name="Name" class="form-control" id="Name" placeholder="Wan Aida" value="{{$doctor_data->name}}">
+                                <label for="name" class="form-label">Name</label>
+                                <input name="name" class="form-control" id="name" placeholder="Wan Aida" value="{{$doctor_data->name}}">
                             </div>
 
 
                             <div class="mb-3">
-                                <label for="Department" class="form-label">Department</label>
-                                <input name="Department" class="form-control" id="Department"
+                                <label for="department" class="form-label">Department</label>
+                                <input name="department" class="form-control" id="department"
                                     placeholder="Wan Mohd Zaini" value="{{$doctor_data->department}}">
                             </div>
 

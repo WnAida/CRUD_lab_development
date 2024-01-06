@@ -13,6 +13,7 @@ class appointmentController extends Controller
         // dd($appointment_data);// Use the correct naming convention
         return view('appointment_index', ['appointment_data' => $appointment_data]);
     }
+
     public function create()
     {
         return view('appointment_create');
@@ -22,7 +23,7 @@ class appointmentController extends Controller
 
     public function store(Request $request)
     {
-        \App\Models\appointment::create([
+        appointment::create([
             'name' => $request->input('name'),
             'faculty' => $request->input('faculty'),
             'date' => $request->input('date'),
@@ -34,25 +35,50 @@ class appointmentController extends Controller
     }
 
 
-    public function edit($id)
+    public function editappointment($id)
     {
-        $appointment = \App\Models\appointment::find($id);
-        return view('edit',['appointment_data'=>$appointment]);
+        $appointment_data = \App\Models\appointment::find($id);
+        return view('appointment_edit', ['appointment_data' => $appointment_data]);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-        $appointment = \App\Models\appointment::find($id);
-        $appointment -> update($request->all());
-        return redirect('/appointmentdata')->with('success', 'Data Successfully Updated');
+        // Validate the request data
+        $request->validate([
+            'name' => 'required',
+            'faculty' => 'required',
+            'date' => 'required|date',
+            'phone_number' => 'required',
+            'reason' => 'required',
+        ]);
 
+        // Find the appointment data
+        $appointment_data = \App\Models\appointment::find($id);
+
+        if (!$appointment_data) {
+            // Handle the case where the appointment data is not found, for example, redirect to a 404 page
+            abort(404);
+        }
+
+        // Update the appointment data
+        $appointment_data->update($request->all());
+
+        // Redirect using the named route
+        return redirect()->route('appointment.index')->with('success', 'Data Successfully Updated');
     }
+
 
     public function delete($id)
     {
-        $appointment = \App\Models\appointment::find($id);
-        $appointment -> delete($appointment);
-        return redirect('/appointmentdata')->with('success', 'Data Successfully Deleted');
+        $appointment_data = \App\Models\appointment::find($id);
 
+        if ($appointment_data) {
+            $appointment_data->delete();
+            return redirect()->route('appointment.index')->with('success', 'Data Successfully Deleted');
+        } else {
+            return redirect()->route('appointment.index')->with('error', 'Data Not Found');
+        }
     }
+
+
 }
