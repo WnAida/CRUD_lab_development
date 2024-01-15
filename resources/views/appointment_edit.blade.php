@@ -1,3 +1,6 @@
+{{-- BCS3453 [PROJECT]-SEMESTER 2324/1
+Student ID: CB20060
+Student Name: WAN AIDA BINTI WAN MOHD ZAINI --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +65,7 @@
     </nav>
     <section>
         <div class="form-size">
-            <form action="/appointment/{{ $appointment_data->id }}/update" method="POST">
+            <form action="{{ route('appointment.update', ['id' => $appointment_data->id]) }}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -73,11 +76,17 @@
                     <label for="faculty" class="form-label">Faculty</label>
                     <select name="faculty" class="form-control" id="faculty">
                         <option value="" disabled>Select Faculty</option>
-                        <option value="Computing" @if($appointment_data->faculty == 'Computing') selected @endif>
+                        <option value="Computing" @if ($appointment_data->faculty == 'Computing') selected @endif>
                             Faculty of Computing</option>
-                        <option value="Chemical" @if($appointment_data->faculty == 'Chemical') selected @endif>
+                        <option value="Chemical" @if ($appointment_data->faculty == 'Chemical') selected @endif>
                             Faculty of Chemical and Process Engineering Technology</option>
-                        <!-- Add other faculty options here -->
+                        <option value="Industrial" @if ($appointment_data->faculty == 'Industrial') selected @endif>Faculty of Industrial Sciences and Technology</option>
+                        <option value="Management" @if ($appointment_data->faculty == 'Management') selected @endif>Faculty of Industrial Management</option>
+                        <option value="Civil" @if ($appointment_data->faculty == 'Civil') selected @endif>Faculty of Civil Engineering Technology</option>
+                        <option value="Mechanical" @if ($appointment_data->faculty == 'Mechanical') selected @endif>Faculty of Mechanical and Automotive Engineering Technology</option>
+                        <option value="Electrical" @if ($appointment_data->faculty == 'Electrical') selected @endif>Faculty of Electrical and Electronics Engineering Technology</option>
+                        <option value="Manufacturing" @if ($appointment_data->faculty == 'Manufacturing') selected @endif>Faculty of Manufacturing and Mechatronic Engineering Technology
+                        </option>
                     </select>
                 </div>
 
@@ -95,8 +104,7 @@
 
                 <div class="mb-3">
                     <label for="reason" class="form-label">Reason</label>
-                    <textarea class="form-control" name="reason" id="reason"
-                        rows="2">{{ $appointment_data->reason }}</textarea>
+                    <textarea class="form-control" name="reason" id="reason" rows="2">{{ $appointment_data->reason }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Update Appointment</button>
             </form>

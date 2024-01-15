@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\doctorController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckUserAccount;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,9 +42,6 @@ Route::get('/appointment/index', 'App\Http\Controllers\appointmentController@ind
 Route::get('/appointment/{id}/edit', 'App\Http\Controllers\appointmentController@editappointment')->name('appointment.edit');
 Route::post('/appointment/{id}/update', 'App\Http\Controllers\appointmentController@update')->name('appointment.update');
 Route::get('/appointment/{id}/delete', 'App\Http\Controllers\appointmentController@delete')->name('appointment.delete');
-
-
-
 
 Route::get('/doctordata', 'App\Http\Controllers\doctorController@index');
 Route::post('/doctordata/create', 'App\Http\Controllers\doctorController@create');

@@ -42,4 +42,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    use Notifiable;
+
+    // ... other methods and properties
+
+    public function getRoleAttribute()
+    {
+        // Check the user's email for a specific domain
+        if (str_ends_with($this->email, '@staff.umpsa.edu.my')) {
+            return 'staff';
+        }
+
+        // Default role if no specific domain is matched
+        return 'default_role';
+    }
 }

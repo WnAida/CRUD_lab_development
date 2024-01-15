@@ -1,3 +1,6 @@
+{{-- BCS3453 [PROJECT]-SEMESTER 2324/1
+Student ID: CB20060
+Student Name: WAN AIDA BINTI WAN MOHD ZAINI--}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,9 +115,8 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="{{ url('/appointment/create') }}">Appointment</a></li>
+                    <li><a href="{{ url('/appointment/index') }}">Appointment</a></li>
                     <li><a href="{{ url('/doctordata') }}">Doctor</a></li>
-                    <li><a href="#">Services</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
